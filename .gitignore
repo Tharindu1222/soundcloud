@@ -4,3 +4,10 @@ dist_installer/
 __pycache__/
 *.spec.bak
 vendor/ffmpeg.exe
+
+# Next.js (Vercel)
+web/node_modules/
+web/.next/
+web/out/
+web/.vercel
+web/*.tsbuildinfo
