@@ -13,6 +13,10 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # Match Vercel: standalone binary (default yt-dlp asset is a python3 script)
+      YOUTUBE_DL_FILENAME: yt-dlp_linux
+      YOUTUBE_DL_SKIP_PYTHON_CHECK: "1"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

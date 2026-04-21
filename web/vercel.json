@@ -2,6 +2,10 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "regions": ["iad1"],
+  "env": {
+    "YOUTUBE_DL_FILENAME": "yt-dlp_linux",
+    "YOUTUBE_DL_SKIP_PYTHON_CHECK": "1"
+  },
   "functions": {
     "app/api/**/*.ts": {
       "maxDuration": 60

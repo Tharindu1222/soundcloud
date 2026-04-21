@@ -25,6 +25,10 @@ SoundCloud helper: **desktop** (Python + Tkinter) and **web** (Next.js for Verce
    In **Project → Settings → Git**, set **Production Branch** to **`master`** if it is not already.  
    Every push to **`master`** triggers a production deployment.
 
+### Vercel + `python3` error
+
+If you see **`env: 'python3': No such file or directory`**, the app was using the wrong yt-dlp asset. This repo sets **`YOUTUBE_DL_FILENAME=yt-dlp_linux`** and **`YOUTUBE_DL_SKIP_PYTHON_CHECK=1`** in `web/vercel.json` so the **standalone** Linux binary is installed (no Python on Vercel). Redeploy after pulling the latest `master`. If you created the project before that change, add the same two variables under **Project → Settings → Environment Variables** (all environments), then **Redeploy**.
+
 ### Limits (important)
 
 - **Hobby** serverless functions time out after **10 seconds**. The first resolve may be slow while `yt-dlp` is prepared; if it times out, try again or upgrade Vercel / use the **desktop** app for heavy use.
